@@ -1,47 +1,104 @@
-#ifndef GENERICAS_H_INCLUDED
-#define GENERICAS_H_INCLUDED
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
 #include "genericas.h"
 
-#endif // GENERICAS_H_INCLUDED
+
 //#------------- Genericas -------------#
+void menu(char *opciones)
+{
+    system("cls");
+    printf("%s \n",opciones);
+    printf("\n0.  Salir \n");
+    printf("\n\tIngrese Opcion: ");
+}
 
-/** \brief Imprime menu en pantalla
- *
- * \param opciones char*
- * \return void
- *
- */
-void menu(char *opciones);
+void sms_error(int mensaje,int Error)
+{
+    system("cls");
+    printf("\n\n");
+    switch(mensaje)
+    {
+        case -1:
+            printf("ERROR-COD: %d -- Inicializar listado",Error);
+            break;
+        case 1:
+            printf("ERROR-COD: %d -- Agregar Pelicula",Error);
+            break;
+        case 2:
+            printf("ERROR-COD: %d -- Borrar Pelicula",Error);
+            break;
+        case 3:
+            printf("ERROR-COD: %d -- Modificar Pelicula",Error);
+            break;
+        case 4:
+            printf("ERROR-COD: %d -- Generar página web",Error);
+            break;
+        case 5:
+            printf("ERROR-COD: %d -- Mostrar Peliculas",Error);
+            break;
+        case -2:
+            printf("ERROR-COD: %d -- Opcion de menu Invalida",Error);
+            break;
+        default:
+            printf("Se produjo un Error Inesperado...");
+            break;
+    }
+    printf("\n\n");
+    system("pause");
+}
 
-/** \brief Imprime mensaje de Error con sus respectivos codigos y la opcion de menu donde ocurrio para facilitar el debuger
- *
- * \param mensaje int
- * \param Error int
- * \return void
- *
- */
-void sms_error(int mensaje,int Error);
+char *get_char(char *sms,int LongitudCadena)
+{
+    char *PTexto= (char *) malloc (sizeof(char)*LongitudCadena);
+    char *TextoLibre=(char *) malloc (sizeof(char)*LongitudCadena+4);
 
-/** \brief devuelve un punteero a una cadena de caracteres
- *
- * \param sms char*
- * \param LongitudCadena int
- * \return char*
- *
- */
-char *get_char(char *sms,int LongitudCadena);
+    int flag;
+    do
+    {
+        flag=0;
+        printf("%s ",sms);
+        fflush(stdin);
+        fgets(TextoLibre,LongitudCadena+3,stdin); //Trunco la lectura del buffer en 3 mas de mi longitud
+        fflush(stdin);
+        strncpy(PTexto, TextoLibre, LongitudCadena); // Copio la cantidad de caracteres hasta 1 menos de la longitud
+        PTexto[sizeof(PTexto) -1] = '\0';        //agrego retorno de carro
 
-/** \brief Devuelve un Nro Entero valuado entre un rango dado.
- *
- * \param sms char*
- * \param desde int
- * \param hasta int
- * \return int
- *
- */
-int get_int_Rango(char *sms,int desde,int hasta);
+        //printf("\nL:%s T:%s Dif:%d TAM:%d ultimo:[%c] Overflow:[%c] \n",TextoLibre,PTexto,strcmp(PTexto,TextoLibre),sizeof(PTexto),PTexto[LongitudCadena-1],PTexto[sizeof(PTexto)]);
+        //system("pause");
 
+        if(strlen(PTexto) >= LongitudCadena) //el strlen funciona para atras... en estos casos asique no sirve..
+        //if(strcmp(PTexto,TextoLibre)<0)
+        {//overflow
+            flag=1;
+            //flag=0;// si lleno mucho el buffer se boludea igual....
+            fflush(stdin);
+            *PTexto=' ';
+            printf("\n Error Overflow: La longitud maxima del campo es: %d \n",LongitudCadena);
+            system("pause");
+            system("cls");
+        }
+    }while(flag!=0);
+
+    strcpy(PTexto,strtok(TextoLibre, "\n"));
+    return PTexto;
+}
+
+int get_int_Rango(char *sms,int desde,int hasta)
+{
+    int aux;
+    int flag=0;
+    do
+    {
+        if(flag==1)
+        {
+            printf("\n Valor fuera de Rango Debe ser: (%d< X <%d)  \n",desde-1,hasta+1);
+            system("pause");
+            system("cls");
+        }
+        fflush(stdin);
+        printf("%s",sms);
+        scanf("%d",&aux);
+        flag=1;
+    }while( (aux<desde) || (aux>hasta) );
+
+    return aux;
+}
 

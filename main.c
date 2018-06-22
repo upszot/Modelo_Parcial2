@@ -2,20 +2,26 @@
 #include <stdlib.h>
 #include <string.h>
 
+#include "ArrayList.h"
+#include "Estructura.h"
 #include "genericas.h"
 
+#define TAMLista 10
 
+int main()
+{
 
-char seguir='s';
+    ArrayList *ListUrg;
+    ArrayList *ListReg;
+
+    ListUrg= al_newArrayList();
+    ListReg= al_newArrayList();
+
+    ECliente  AuxCliente;
+
+    char seguir='s';
     int opcion=0;
     int Error=-9;
-    EMovie peliculas[TAMPelis];
-    Error=inicializaVector(peliculas,TAMPelis);
-
-    char Archivo[30]="Peliculas.txt";
-    //char web[50]="Web\\index_peliculas.html";
-    char web[50]="Web\\index.html";
-    char Path_Template[20]="Temp_Web\\";
 
     if(Error==0)
     {
@@ -32,6 +38,8 @@ char seguir='s';
             switch(opcion)
             {
                 case 1:
+
+                    Error= al_add(ListUrg, AuxCliente);
                     break;
                 case 2:
                     break;

@@ -1,0 +1,36 @@
+# depslib dependency file v1.0
+1529696914 source:c:\test\gferrer\modelo_parcial2\arraylist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ArrayList.h"
+
+1529695821 c:\test\gferrer\modelo_parcial2\arraylist.h
+
+1529697547 source:c:\test\gferrer\modelo_parcial2\genericas.c
+	"genericas.h"
+
+1529696179 c:\test\gferrer\modelo_parcial2\genericas.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1529696914 source:c:\test\gferrer\modelo_parcial2\estructura.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Estructura.h"
+
+1529697315 c:\test\gferrer\modelo_parcial2\estructura.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1529697304 source:c:\test\gferrer\modelo_parcial2\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ArrayList.h"
+	"Estructura.h"
+	"genericas.h"
+
