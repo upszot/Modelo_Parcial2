@@ -9,3 +9,4 @@ typedef struct{
     int NroTurno;
     char DNI[20];
 }ECliente;
+

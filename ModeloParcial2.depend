@@ -15,18 +15,19 @@
 	<stdlib.h>
 	<string.h>
 
-1529696914 source:c:\test\gferrer\modelo_parcial2\estructura.c
+1529700499 source:c:\test\gferrer\modelo_parcial2\estructura.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"Estructura.h"
+	"ArrayList.h"
 
-1529697315 c:\test\gferrer\modelo_parcial2\estructura.h
+1529700037 c:\test\gferrer\modelo_parcial2\estructura.h
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 
-1529697304 source:c:\test\gferrer\modelo_parcial2\main.c
+1529705365 source:c:\test\gferrer\modelo_parcial2\main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
