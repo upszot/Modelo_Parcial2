@@ -87,6 +87,11 @@ int main()
                     //Error=MuestraClientes(ListReg,"Turnos Regulares por Atender");
 
                     Error=al_MuestraElemento_desde_hasta(ListUrg,"Turnos Urgentes por Atender",MuestraCliente ,0,ListUrg->len(ListUrg),PAGINADO);
+                    if(Error!=0)
+                    {
+                        sms_error(opcion,Error);
+                        Error=0;
+                    }
                     Error=al_MuestraElemento_desde_hasta(ListReg,"Turnos Regulares por Atender",MuestraCliente ,0,ListReg->len(ListReg),PAGINADO);
 
                     break;

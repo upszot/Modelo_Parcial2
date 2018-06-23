@@ -115,7 +115,7 @@ int getNextTurno(ArrayList *ListPendientes,ArrayList *ListAtendidos)
     }//if(ListPendientes!=NULL && ListAtendidos!=NULL)
     return retorno;
 }
-
+/*
 int MuestraClientes(ArrayList *this,char *sms)
 {
     int retorno=-1;
@@ -140,20 +140,19 @@ int MuestraClientes(ArrayList *this,char *sms)
     }
     return retorno;
 }
-
+*/
 
 int al_MuestraElemento_desde_hasta(ArrayList *this,char *Titulo,int (*pFunc)(void*) ,int desde,int hasta,int paginado)
 {
     int retorno=-1;
     int cont=0;
-    system("cls");
     if(this!=NULL && Titulo!=NULL)
     {
         retorno=0;
+        system("cls");
         printf("\n\n-------- %s --------\n",Titulo);
         if(this->isEmpty(this)==0)
         {//No esta vacio
-            //void *pElement;
             for(int index=desde;index<hasta;index++)
             {
                 if(cont!=0 && cont %paginado==0)
@@ -162,9 +161,7 @@ int al_MuestraElemento_desde_hasta(ArrayList *this,char *Titulo,int (*pFunc)(voi
                     system("cls");
                     printf("\n\n-------- %s --------\n",Titulo);
                 }
-                //pElement=this->get(this,index);
                 pFunc(al_get(this,index));
-                //MuestraCliente(pElement);
                 cont++;
             }
 
@@ -173,6 +170,11 @@ int al_MuestraElemento_desde_hasta(ArrayList *this,char *Titulo,int (*pFunc)(voi
                 system("pause");
             }
         }//if(this->isEmpty(this)==0)
+        else
+        {//o con error o sin datos a mostrar
+            printf("\n Sin Datos a Motrar...\n");
+            system("pause");
+        }
     }//if(this!=NULL && Titulo!=NULL)
     return retorno;
 }
