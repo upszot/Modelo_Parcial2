@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include "ArrayList.h"
+#include "genericas.h"
 
 typedef struct{
     int id;

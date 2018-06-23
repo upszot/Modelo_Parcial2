@@ -50,11 +50,12 @@
 	"Estructura.h"
 	"ArrayList.h"
 
-1529719399 e:\documentos\tecnicatura\programacion\modelo_parcial2\estructura.h
+1529719786 e:\documentos\tecnicatura\programacion\modelo_parcial2\estructura.h
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"ArrayList.h"
+	"genericas.h"
 
 1529714771 source:e:\documentos\tecnicatura\programacion\modelo_parcial2\genericas.c
 	"genericas.h"
