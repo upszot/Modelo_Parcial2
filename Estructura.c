@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include "Estructura.h"
-#include "ArrayList.h"
+
 
 ECliente* nuevoTramite(void)
 {
@@ -35,7 +35,7 @@ int AltaTramite(ArrayList *ListPendientes,ArrayList *ListAtendidos)
 {
     int retorno=-1;
     int NroTurno;
-    ECliente *Cliente;
+
     if(ListPendientes !=NULL && ListAtendidos !=NULL)
     {
         NroTurno=getNextTurno(ListPendientes,ListAtendidos);

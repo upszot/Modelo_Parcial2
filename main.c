@@ -21,8 +21,6 @@ int main()
     ListReg= al_newArrayList();
     ListAtendidosReg= al_newArrayList();
 
-    ECliente  AuxCliente;
-
     char seguir='s';
     int opcion=0;
     int Error=-9;
