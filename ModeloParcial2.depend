@@ -43,12 +43,11 @@
 
 1529712897 e:\documentos\tecnicatura\programacion\modelo_parcial2\arraylist.h
 
-1529718911 source:e:\documentos\tecnicatura\programacion\modelo_parcial2\estructura.c
+1529719786 source:e:\documentos\tecnicatura\programacion\modelo_parcial2\estructura.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"Estructura.h"
-	"ArrayList.h"
 
 1529719786 e:\documentos\tecnicatura\programacion\modelo_parcial2\estructura.h
 	<stdio.h>

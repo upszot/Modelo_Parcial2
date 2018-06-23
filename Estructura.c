@@ -118,10 +118,10 @@ int MuestraClientes(ArrayList *this,char *sms)
     int retorno=-1;
     if(this!=NULL && sms!=NULL)
     {
+        printf("\n\n-------- %s --------\n",sms);
         if(this->isEmpty(this)==0)
         {//No esta vacio
             ECliente *Cliente;
-            printf("\n\n-------- %s --------\n",sms);
             for(int index=0;index<this->len(this);index++)
             {
                 Cliente=this->get(this,index);
