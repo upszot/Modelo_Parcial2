@@ -13,7 +13,8 @@ typedef struct{
 ECliente* nuevoTramite(void);
 int ProxCliente(ArrayList *ListPendientes,ArrayList *ListAtendidos,char *sms);
 int AltaTramite(ArrayList *ListPendientes,ArrayList *ListAtendidos);
-void MuestraCliente(ECliente * Cliente);
+int MuestraCliente(ECliente * Cliente);
 int Mayor(ArrayList *this);
 int getNextTurno(ArrayList *ListPendientes,ArrayList *ListAtendidos);
 int MuestraClientes(ArrayList *this,char *sms);
+int al_MuestraElemento_desde_hasta(ArrayList *this,char *Titulo,int (*pFunc)(void*) ,int desde,int hasta,int paginado);

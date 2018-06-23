@@ -56,13 +56,16 @@ int AltaTramite(ArrayList *ListPendientes,ArrayList *ListAtendidos)
     return retorno;
 }
 
-void MuestraCliente(ECliente * Cliente)
+int MuestraCliente(ECliente * Cliente)
 {
+    int retorno=-1;
     if(Cliente !=NULL)
     {
+        retorno=0;
         printf("Turno: %d ",Cliente->NroTurno);
         printf("DNI: %s \n",Cliente->DNI);
     }
+    return retorno;
 }
 
 
@@ -121,11 +124,11 @@ int MuestraClientes(ArrayList *this,char *sms)
         printf("\n\n-------- %s --------\n",sms);
         if(this->isEmpty(this)==0)
         {//No esta vacio
-            ECliente *Cliente;
+            void *pElement;
             for(int index=0;index<this->len(this);index++)
             {
-                Cliente=this->get(this,index);
-                MuestraCliente(Cliente);
+                pElement=this->get(this,index);
+                MuestraCliente(pElement);
             }
         }
         else
@@ -135,5 +138,41 @@ int MuestraClientes(ArrayList *this,char *sms)
         system("pause");
         retorno=0;
     }
+    return retorno;
+}
+
+
+int al_MuestraElemento_desde_hasta(ArrayList *this,char *Titulo,int (*pFunc)(void*) ,int desde,int hasta,int paginado)
+{
+    int retorno=-1;
+    int cont=0;
+    system("cls");
+    if(this!=NULL && Titulo!=NULL)
+    {
+        retorno=0;
+        printf("\n\n-------- %s --------\n",Titulo);
+        if(this->isEmpty(this)==0)
+        {//No esta vacio
+            //void *pElement;
+            for(int index=desde;index<hasta;index++)
+            {
+                if(cont!=0 && cont %paginado==0)
+                {
+                    system("pause");
+                    system("cls");
+                    printf("\n\n-------- %s --------\n",Titulo);
+                }
+                //pElement=this->get(this,index);
+                pFunc(al_get(this,index));
+                //MuestraCliente(pElement);
+                cont++;
+            }
+
+            if(cont!=0)
+            {//pausa la ultima tanda de elementos mostrados
+                system("pause");
+            }
+        }//if(this->isEmpty(this)==0)
+    }//if(this!=NULL && Titulo!=NULL)
     return retorno;
 }

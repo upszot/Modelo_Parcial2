@@ -43,13 +43,13 @@
 
 1529712897 e:\documentos\tecnicatura\programacion\modelo_parcial2\arraylist.h
 
-1529719786 source:e:\documentos\tecnicatura\programacion\modelo_parcial2\estructura.c
+1529722190 source:e:\documentos\tecnicatura\programacion\modelo_parcial2\estructura.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"Estructura.h"
 
-1529719786 e:\documentos\tecnicatura\programacion\modelo_parcial2\estructura.h
+1529721443 e:\documentos\tecnicatura\programacion\modelo_parcial2\estructura.h
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -64,7 +64,7 @@
 	<stdlib.h>
 	<string.h>
 
-1529719250 source:e:\documentos\tecnicatura\programacion\modelo_parcial2\main.c
+1529722190 source:e:\documentos\tecnicatura\programacion\modelo_parcial2\main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>

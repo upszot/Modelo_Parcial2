@@ -7,6 +7,7 @@
 #include "genericas.h"
 
 #define TAMLista 10
+#define PAGINADO 3
 
 int main()
 {
@@ -82,8 +83,12 @@ int main()
 
                     break;
                 case 4:
-                    MuestraClientes(ListUrg,"Turnos Urgentes por Atender");
-                    MuestraClientes(ListReg,"Turnos Regulares por Atender");
+                    //Error=MuestraClientes(ListUrg,"Turnos Urgentes por Atender");
+                    //Error=MuestraClientes(ListReg,"Turnos Regulares por Atender");
+
+                    Error=al_MuestraElemento_desde_hasta(ListUrg,"Turnos Urgentes por Atender",MuestraCliente ,0,ListUrg->len(ListUrg),PAGINADO);
+                    Error=al_MuestraElemento_desde_hasta(ListReg,"Turnos Regulares por Atender",MuestraCliente ,0,ListReg->len(ListReg),PAGINADO);
+
                     break;
                 case 5:
 
