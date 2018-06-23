@@ -35,3 +35,39 @@
 	"Estructura.h"
 	"genericas.h"
 
+1529712897 source:e:\documentos\tecnicatura\programacion\modelo_parcial2\arraylist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ArrayList.h"
+
+1529712897 e:\documentos\tecnicatura\programacion\modelo_parcial2\arraylist.h
+
+1529718664 source:e:\documentos\tecnicatura\programacion\modelo_parcial2\estructura.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Estructura.h"
+	"ArrayList.h"
+
+1529712897 e:\documentos\tecnicatura\programacion\modelo_parcial2\estructura.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1529714771 source:e:\documentos\tecnicatura\programacion\modelo_parcial2\genericas.c
+	"genericas.h"
+
+1529712897 e:\documentos\tecnicatura\programacion\modelo_parcial2\genericas.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1529718620 source:e:\documentos\tecnicatura\programacion\modelo_parcial2\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ArrayList.h"
+	"Estructura.h"
+	"genericas.h"
+

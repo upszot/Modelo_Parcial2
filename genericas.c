@@ -20,19 +20,27 @@ void sms_error(int mensaje,int Error)
             printf("ERROR-COD: %d -- Inicializar listado",Error);
             break;
         case 1:
-            printf("ERROR-COD: %d -- Agregar Pelicula",Error);
+            printf("ERROR-COD: %d -- TRAMITE URGENTE",Error);
             break;
         case 2:
-            printf("ERROR-COD: %d -- Borrar Pelicula",Error);
+            printf("ERROR-COD: %d -- TRAMITE REGULAR",Error);
             break;
         case 3:
-            printf("ERROR-COD: %d -- Modificar Pelicula",Error);
+            if(Error!=100)
+            {
+                printf("ERROR-COD: %d -- PROXIMO CLIENTE",Error);
+            }
+            else
+            {
+                printf("\n\n NO HAY MAS GENTE QUE ATENDER \n\n");
+            }
+
             break;
         case 4:
-            printf("ERROR-COD: %d -- Generar página web",Error);
+            printf("ERROR-COD: %d -- LISTAR",Error);
             break;
         case 5:
-            printf("ERROR-COD: %d -- Mostrar Peliculas",Error);
+            printf("ERROR-COD: %d -- INFORMAR",Error);
             break;
         case -2:
             printf("ERROR-COD: %d -- Opcion de menu Invalida",Error);
