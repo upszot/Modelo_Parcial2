@@ -447,6 +447,7 @@ int al_sort(ArrayList* this, int (*pFunc)(void* ,void*), int order)
     void* AuxElement;
     if(this !=NULL && pFunc!=NULL && (order==0 ||order==1) )
     {
+        returnAux = 0;
         for(int i=0;i<al_len(this)-1;i++)
         {
             for(int j=i+1;j<al_len(this);j++)
@@ -458,7 +459,6 @@ int al_sort(ArrayList* this, int (*pFunc)(void* ,void*), int order)
                         AuxElement=al_get(this,i);
                         al_set(this,i,al_get(this,j));
                         al_set(this,j,AuxElement);
-                        returnAux = 0;
                     }
                 }
                 else
@@ -468,7 +468,6 @@ int al_sort(ArrayList* this, int (*pFunc)(void* ,void*), int order)
                         AuxElement=al_get(this,j);
                         al_set(this,j,al_get(this,i));
                         al_set(this,i,AuxElement);
-                        returnAux = 0;
                     }
                 }//if(order==0)
             }//for(int j=i+1;j<al_len(this)-1;j++)

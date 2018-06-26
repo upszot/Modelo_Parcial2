@@ -11,6 +11,17 @@ ECliente* nuevoTramite(void)
     return returnAux;
 }
 
+int compara_elementos_Estructura(void* pElementA,void* pElementB)
+{
+    ECliente *tmp_1;
+    ECliente *tmp_2;
+    tmp_1=(ECliente * ) pElementA;
+    tmp_2=(ECliente * ) pElementB;
+    return strcmp(tmp_1->DNI,tmp_2->DNI);
+}
+
+
+
 int ProxCliente(ArrayList *ListPendientes,ArrayList *ListAtendidos,char *sms)
 {
     int retorno=-1;
@@ -177,4 +188,24 @@ int al_MuestraElemento_desde_hasta(ArrayList *this,char *Titulo,int (*pFunc)(voi
         }
     }//if(this!=NULL && Titulo!=NULL)
     return retorno;
+}
+
+
+ArrayList* clonaOrdenado(ArrayList *this,int (*pFunc)(void* ,void*),int orden)
+{
+    ArrayList *ListaOrdenada=NULL;
+    if(this!=NULL)
+    {
+        ListaOrdenada = al_newArrayList();
+        ListaOrdenada=al_clone(this);
+        if(ListaOrdenada!=NULL)
+        {
+            if(ListaOrdenada->sort(ListaOrdenada,compara_elementos_Estructura,1)==-1)
+            //if(ListaOrdenada->sort(ListaOrdenada,pFunc,1)==-1)
+            {
+                ListaOrdenada=NULL;
+            }
+        }
+    }
+    return ListaOrdenada;
 }

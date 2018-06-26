@@ -7,26 +7,27 @@
 #include "genericas.h"
 
 #define TAMLista 10
-#define PAGINADO 3
+#define PAGINADO 5
 
 int main()
 {
-
     ArrayList *ListUrg;
     ArrayList *ListAtendidosUrg;
     ArrayList *ListReg;
     ArrayList *ListAtendidosReg;
+    ArrayList *ListTemporal;
 
     ListUrg= al_newArrayList();
     ListAtendidosUrg= al_newArrayList();
     ListReg= al_newArrayList();
     ListAtendidosReg= al_newArrayList();
+    ListTemporal= al_newArrayList();
 
     char seguir='s';
     int opcion=0;
     int Error=-9;
 
-    if(ListUrg!=NULL && ListAtendidosUrg!=NULL && ListReg!=NULL && ListAtendidosReg!=NULL)
+    if(ListUrg!=NULL && ListAtendidosUrg!=NULL && ListReg!=NULL && ListAtendidosReg!=NULL && ListTemporal!=NULL)
     {
         Error=0;
     }
@@ -86,16 +87,37 @@ int main()
                     //Error=MuestraClientes(ListUrg,"Turnos Urgentes por Atender");
                     //Error=MuestraClientes(ListReg,"Turnos Regulares por Atender");
 
-                    Error=al_MuestraElemento_desde_hasta(ListUrg,"Turnos Urgentes por Atender",MuestraCliente ,0,ListUrg->len(ListUrg),PAGINADO);
+                    Error=al_MuestraElemento_desde_hasta(ListUrg,"Turnos Urgentes por Atender",MuestraCliente ,0,al_len(ListUrg),PAGINADO);
                     if(Error!=0)
                     {
                         sms_error(opcion,Error);
                         Error=0;
                     }
                     Error=al_MuestraElemento_desde_hasta(ListReg,"Turnos Regulares por Atender",MuestraCliente ,0,ListReg->len(ListReg),PAGINADO);
-
+                    /*
+                    Error=al_MuestraElemento_desde_hasta(ListAtendidosUrg,"ATENDIDOS URG",MuestraCliente ,0,ListAtendidosUrg->len(ListAtendidosUrg),PAGINADO);
+                    */
                     break;
                 case 5:
+                    ListTemporal= clonaOrdenado(ListAtendidosUrg,compara_elementos_Estructura,1);
+                    if(ListTemporal!=NULL)
+                    {
+                        Error=al_MuestraElemento_desde_hasta(ListTemporal,"Turnos Urgentes Atendidos",MuestraCliente ,0,ListTemporal->len(ListTemporal),PAGINADO);
+                    }
+                    else
+                    {
+                        Error=-1;
+                    }
+                    ListTemporal=NULL;
+                    ListTemporal= clonaOrdenado(ListAtendidosReg,compara_elementos_Estructura,1);
+                    if(ListTemporal!=NULL)
+                    {
+                        Error=al_MuestraElemento_desde_hasta(ListTemporal,"Turnos Urgentes Atendidos",MuestraCliente ,0,ListTemporal->len(ListTemporal),PAGINADO);
+                    }
+                    else
+                    {
+                        Error=-1;
+                    }
 
                     break;
                 case 0:
