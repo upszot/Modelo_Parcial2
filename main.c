@@ -7,7 +7,7 @@
 #include "genericas.h"
 
 #define TAMLista 10
-#define PAGINADO 5
+#define PAGINADO 3
 
 int main()
 {

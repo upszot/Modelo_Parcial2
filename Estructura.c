@@ -206,7 +206,7 @@ ArrayList* clonaOrdenado(ArrayList *this,int (*pFunc)(void* ,void*),int orden)
         if(ListaOrdenada!=NULL)
         {
             //if(ListaOrdenada->sort(ListaOrdenada,compara_elementos_Estructura,1)==-1)
-            if(ListaOrdenada->sort(ListaOrdenada,pFunc,1)==-1)
+            if(ListaOrdenada->sort(ListaOrdenada,pFunc,orden)==-1)
             {
                 ListaOrdenada=NULL;
             }
