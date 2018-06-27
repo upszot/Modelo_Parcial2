@@ -35,7 +35,7 @@
 	"Estructura.h"
 	"genericas.h"
 
-1529712897 source:e:\documentos\tecnicatura\programacion\modelo_parcial2\arraylist.c
+1529973644 source:e:\documentos\tecnicatura\programacion\modelo_parcial2\arraylist.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -43,7 +43,7 @@
 
 1529712897 e:\documentos\tecnicatura\programacion\modelo_parcial2\arraylist.h
 
-1529973364 source:e:\documentos\tecnicatura\programacion\modelo_parcial2\estructura.c
+1530063608 source:e:\documentos\tecnicatura\programacion\modelo_parcial2\estructura.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -56,7 +56,7 @@
 	"ArrayList.h"
 	"genericas.h"
 
-1529714771 source:e:\documentos\tecnicatura\programacion\modelo_parcial2\genericas.c
+1530064921 source:e:\documentos\tecnicatura\programacion\modelo_parcial2\genericas.c
 	"genericas.h"
 
 1529712897 e:\documentos\tecnicatura\programacion\modelo_parcial2\genericas.h
@@ -64,7 +64,7 @@
 	<stdlib.h>
 	<string.h>
 
-1529973302 source:e:\documentos\tecnicatura\programacion\modelo_parcial2\main.c
+1530064410 source:e:\documentos\tecnicatura\programacion\modelo_parcial2\main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>

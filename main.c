@@ -106,17 +106,17 @@ int main()
                     }
                     else
                     {
-                        Error=-1;
+                        sms_error(opcion,-10);
                     }
                     ListTemporal=NULL;
                     ListTemporal= clonaOrdenado(ListAtendidosReg,compara_elementos_Estructura,1);
                     if(ListTemporal!=NULL)
                     {
-                        Error=al_MuestraElemento_desde_hasta(ListTemporal,"Turnos Urgentes Atendidos",MuestraCliente ,0,ListTemporal->len(ListTemporal),PAGINADO);
+                        Error=al_MuestraElemento_desde_hasta(ListTemporal,"Turnos Regulares Atendidos",MuestraCliente ,0,ListTemporal->len(ListTemporal),PAGINADO);
                     }
                     else
                     {
-                        Error=-1;
+                        Error=-20;
                     }
 
                     break;

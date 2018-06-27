@@ -13,11 +13,16 @@ ECliente* nuevoTramite(void)
 
 int compara_elementos_Estructura(void* pElementA,void* pElementB)
 {
-    ECliente *tmp_1;
-    ECliente *tmp_2;
-    tmp_1=(ECliente * ) pElementA;
-    tmp_2=(ECliente * ) pElementB;
-    return strcmp(tmp_1->DNI,tmp_2->DNI);
+    int retorno=-1;
+    if( pElementA!=NULL && pElementB!=NULL )
+    {
+        ECliente *tmp_1;
+        ECliente *tmp_2;
+        tmp_1=(ECliente * ) pElementA;
+        tmp_2=(ECliente * ) pElementB;
+        retorno=strcmp(tmp_1->DNI,tmp_2->DNI);
+    }
+    return retorno;
 }
 
 
@@ -25,7 +30,7 @@ int compara_elementos_Estructura(void* pElementA,void* pElementB)
 int ProxCliente(ArrayList *ListPendientes,ArrayList *ListAtendidos,char *sms)
 {
     int retorno=-1;
-    if(ListPendientes!=NULL && ListAtendidos!=NULL)
+    if(ListPendientes!=NULL && ListAtendidos!=NULL && sms!=NULL)
     {
 
         ECliente *Cliente;
@@ -157,7 +162,7 @@ int al_MuestraElemento_desde_hasta(ArrayList *this,char *Titulo,int (*pFunc)(voi
 {
     int retorno=-1;
     int cont=0;
-    if(this!=NULL && Titulo!=NULL)
+    if(this!=NULL && Titulo!=NULL && pFunc!=NULL && desde >=0 && desde <= hasta && (hasta <= this->len(this)) && paginado >0)
     {
         retorno=0;
         system("cls");
@@ -194,7 +199,7 @@ int al_MuestraElemento_desde_hasta(ArrayList *this,char *Titulo,int (*pFunc)(voi
 ArrayList* clonaOrdenado(ArrayList *this,int (*pFunc)(void* ,void*),int orden)
 {
     ArrayList *ListaOrdenada=NULL;
-    if(this!=NULL)
+    if(this!=NULL && pFunc!=NULL && (orden==0 ||orden==1) )
     {
         ListaOrdenada = al_newArrayList();
         ListaOrdenada=al_clone(this);

@@ -40,7 +40,23 @@ void sms_error(int mensaje,int Error)
             printf("ERROR-COD: %d -- LISTAR",Error);
             break;
         case 5:
-            printf("ERROR-COD: %d -- INFORMAR",Error);
+            if(Error==-1)
+            {
+                printf("ERROR-COD: %d -- INFORMAR",Error);
+            }
+            else
+            {
+                if(Error==-10)
+                {
+                    printf("-------- Turnos Urgentes Atendidos --------\n");
+                }
+                else
+                {
+                    printf("-------- Turnos Regulares Atendidos --------\n");
+                }
+                printf("\n Sin Datos a Motrar...");
+            }
+
             break;
         case -2:
             printf("ERROR-COD: %d -- Opcion de menu Invalida",Error);
